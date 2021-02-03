@@ -29,4 +29,4 @@ On the top level directory run the following bash/cmd commands:
 There will be a README file per subproject(chapter) with instructions on how to use
 
 * [Programs Generator](./ProgramsGenerator)
-* [Kernel-Simulator (Chapter 4)](./Chapter-4(Processes-and-Thread))
+* [Kernel-Simulator (Chapter 4)](./Chapter-4-Processes-and-Thread)

@@ -4,7 +4,7 @@ project( Short-Intorudction-to-Operating-Systems)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(CHAPTER4_PATH "Chapter-4(Processes-and-Thread)")
+set(CHAPTER4_PATH "Chapter-4-Processes-and-Thread")
 
 
 add_subdirectory(${CHAPTER4_PATH})

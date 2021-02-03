@@ -31,6 +31,8 @@
 *.out
 *.app
 
+#CMake Build folder
+build
 #CMake
 
 CMakeLists.txt.user
