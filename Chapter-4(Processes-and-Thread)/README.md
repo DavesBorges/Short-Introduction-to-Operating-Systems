@@ -30,3 +30,5 @@ The operators **fork**, **wait**, **sleep** and **ret** are threaded differently
 | wait \<operand\> | The process will wait for the process of pid == operand to finish before continue |
 | sleep \<operand\>| Sleep for \<operand\> seconds. Equivalent to this_thread::sleep_for() c++ function|
 | ret  \<operand\> | Terminate the current process                                                     |
+
+The pseudo_program files are created by the subproject of this repository [ProgramsGenerator](../ProgramsGenerator)
