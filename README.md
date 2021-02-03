@@ -1,5 +1,5 @@
 # Short-Intorudction-to-Operating-Systems
-A repository with projects from the book Short Intorudction to Operating Systems by Mark Burgess
+A repository with projects from the book Short Introduction to Operating Systems by Mark Burgess
 #### Where to get this book
 The book is free and you have two options available on getting it:
 * [PDF Version](http://markburgess.org/os/os.pdf).
