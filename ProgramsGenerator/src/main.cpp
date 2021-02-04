@@ -1,11 +1,22 @@
-// ProgramsGenerator.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+/*
+*	Author David de Jesus M. Borges
+*	Date:	02/04/2021
+*
+*	This program generate pseudo programs for the kernel Simulator
+*   The name of the program is passed as a command line argument
+*   
+*   The pseudo program contains 20 instructions each in a separate line, the 
+*   last being ret 0
+*/
 
 #include <iostream>
 #include <fstream>
 #include <chrono>
 #include <random>
-#include "../../Chapter-4-Processes-and-Thread/src/Process/Runtime.h"
+#include "../../Chapter-4-Processes-and-Thread/src/Command/Command.h"
+
+typedef std::chrono::high_resolution_clock Time;
+using namespace std::chrono;
 
 bool seed{ true };
 
@@ -13,9 +24,9 @@ inline int rand_int(int min, int max) {
     static std::default_random_engine ran;
 
     if (seed) {
-        std::chrono::high_resolution_clock::time_point begin = std::chrono::high_resolution_clock::now();
+        Time::time_point begin = Time::now();
         auto duration = begin.time_since_epoch();
-        auto epoch = std::chrono::duration_cast<std::chrono::milliseconds>(duration);
+        auto epoch = duration_cast<std::chrono::milliseconds>(duration);
         ran.seed(epoch.count());
         seed = false;
     }
@@ -23,7 +34,8 @@ inline int rand_int(int min, int max) {
     return std::uniform_int_distribution<>{min, max -1}(ran);
 }
 
-std::string operators[7]{ "load", "add", "store", "jsr", "wait", "fork", "sleep" };
+std::string operators[7]{ "load", "add", "store", "jsr",
+                           "wait", "fork", "sleep" };
 
 int main(int argc, char* argv[])
 {

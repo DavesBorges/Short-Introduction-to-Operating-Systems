@@ -1,16 +1,26 @@
+/*
+*	Author David de Jesus M. Borges
+*	Date:	02/04/2021
+*
+*			This file contains the definitions of functions for conveting back 
+*		and forth from int to Priority and the overloaded operators < and ==
+*		for Control_block type and < for Priority type
+*	
+*/
+
 #include "Control_block.h"
 
 bool operator<(const Priority& p1, const Priority& p2) {
 	int priority1 = 0;
 	int priority2 = 0;
 	switch (p1) {
-	case Priority::HIGH:
+	case Priority::high:
 		priority1 = 3;
 		break;
-	case Priority::MEDIUM:
+	case Priority::medium:
 		priority1 = 2;
 		break;
-	case Priority::LOW:
+	case Priority::low:
 		priority1 = 1;
 		break;
 	default:
@@ -18,13 +28,13 @@ bool operator<(const Priority& p1, const Priority& p2) {
 	}
 
 	switch (p2) {
-	case Priority::HIGH:
+	case Priority::high:
 		priority2 = 3;
 		break;
-	case Priority::MEDIUM:
+	case Priority::medium:
 		priority2 = 2;
 		break;
-	case Priority::LOW:
+	case Priority::low:
 		priority2 = 1;
 		break;
 	default:
@@ -37,25 +47,28 @@ bool operator<(const Priority& p1, const Priority& p2) {
 Priority int_to_priority(int i) {
 	switch (i) {
 	case 1:
-		return Priority::LOW;
+		return Priority::low;
 	case 2:
-		return Priority::MEDIUM;
+		return Priority::medium;
 	case 3:
-		return Priority::HIGH;
+		return Priority::high;
 	default:
-		return Priority::MEDIUM;
+		return Priority::medium;
 	}
 }
 
 int priority_to_int(const Priority& priority) {
 	switch (priority) {
-	case Priority::HIGH:
+	case Priority::high:
 		return 3;
-	case Priority::MEDIUM:
+	case Priority::medium:
 		return 2;
-	case Priority::LOW:
+	case Priority::low:
 		return 1;
+	default:
+		return 2;
 	}
+
 }
 
 
