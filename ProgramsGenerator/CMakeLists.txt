@@ -8,3 +8,6 @@ set_target_properties( ProgramsGenerator	PROPERTIES
 						RUNTIME_OUTPUT_DIRECTORY ${BINARY_PATH}
 						)
 
+target_include_directories(ProgramsGenerator PUBLIC 
+							../Chapter-4-Processes-And-Thread/src)
+

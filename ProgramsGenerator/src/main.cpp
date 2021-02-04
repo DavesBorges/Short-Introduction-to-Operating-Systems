@@ -13,7 +13,7 @@
 #include <fstream>
 #include <chrono>
 #include <random>
-#include "../../Chapter-4-Processes-and-Thread/src/Command/Command.h"
+#include "Command/Command.h"
 
 typedef std::chrono::high_resolution_clock Time;
 using namespace std::chrono;
