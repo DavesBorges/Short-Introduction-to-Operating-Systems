@@ -1,21 +1,26 @@
+/*
+*	Author David de Jesus M. Borges
+*	Date:	02/04/2021
+*
+*	This file contains the entry point for the Kernel Simulator
+*
+*    The command line command should be in the form:
+*    "./Kernel-Simulator program1 priorityprogram1 program2 priorityprogram2"
+* 
+*/
+
+
 #include <iostream>
 #include "Process/Runtime.h"
 
-void print_message(const high_resolution_clock::time_point& begin);
+void print_message(const kernel_clock::time_point& begin);
 
 int main(int argc, char* argv[])
 {
-    int result = schedule_args(argc, argv);
-    high_resolution_clock::time_point start = high_resolution_clock::now();
 
-    if (result != SCHEDULE_STATUS_OK) {
-        std::cerr << " Format " << "<process1> <priority_1> <process2> <priority2>" 
-            << " where priority might be 1 2 or 3" << '\n';
-        return result;
-    }
+    kernel_clock::time_point start;
 
-    execute_tasks();
-    
+    execute_all_processes(argc, argv);     
     print_message(start);
 
     return 0;
@@ -23,18 +28,23 @@ int main(int argc, char* argv[])
 }
 
 
-void print_message(const high_resolution_clock::time_point& start) {
+void print_message(const kernel_clock::time_point& start) {
  
-    std::cout << "Finished in " << std::chrono::duration_cast<seconds>(high_resolution_clock::now() - start).count() << " seconds";
+    std::cout << "Finished in " 
+			<< duration_cast<seconds>(kernel_clock::now() - start).count() 
+			<< " seconds";
     std::cout << "\n -------------------------------\n";
 
     for (auto& process : finished_processes) {
-        int real_time = std::chrono::duration_cast<seconds>(process.real_time).count();
-        std::cout << "Process name " << process.short_name << ", pid " << process.pid
+        auto real_time = duration_cast<seconds>(process.real_time).count();
+        std::cout << "Process name " << process.short_name 
+				<< ", pid " << process.pid
             << "\n\tPriority Level " << priority_to_int(process.priority)
-            << "\n\tcpu time " << std::chrono::duration_cast<seconds>(process.cpu_time).count()
-            << " seconds\n\treal time " << real_time
-            << " seconds \n\tinstructions executed " << process.executed_instructions
-            << "\n\tinstructions/second " << process.executed_instructions / double(real_time) << '\n' << '\n';
+            << "\n\tcpu time "
+			<< duration_cast<seconds>(process.cpu_time).count()<<" seconds\n\t"
+			<< "real time " << real_time << " seconds \n\t"
+			<< "instructions executed " << process.executed_instructions
+            << "\n\tinstructions/second " 
+			<< process.executed_instructions /double(real_time)<<'\n'<< '\n';
     }
 }
