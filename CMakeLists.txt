@@ -9,9 +9,11 @@ set(CHAPTER4_PATH "Chapter-4-Processes-and-Thread")
 
 add_subdirectory(${CHAPTER4_PATH})
 
-set_property( DIRECTORY  PROPERTY   VS_STARTUP_PROJECT Kernel-Simulator)
 add_subdirectory(ProgramsGenerator)
 
+add_subdirectory(Chapter-5-Memory-and-Storage)
+
+set_property( DIRECTORY  PROPERTY   VS_STARTUP_PROJECT Page-Replacement)
 
 
 
