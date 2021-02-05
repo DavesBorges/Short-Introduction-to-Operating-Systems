@@ -11,14 +11,18 @@ each process accordingly to  the  Priority of each process.
 The program gets the name of the files and priority which can be 1(LOW) 2(MEDIUM) or 3(HIGH)
 There are pseudo programs example at [this folder](./pseudo_programs). You can copy them into the executable directory or use a relative path.
 
+### Examples
+
 Windows cmd
 ```bash
-Kernel-Simulator "Program A" 1 "Program B" 3 "Program C" 2
+Kernel-Simulator "Program A" 1 "Program B" 3 "Program C" 2 
 ```
 Bash
 ```bash
 ./Kernel-Simulator "Program A" 1 "Program B" 3 "Program C" 2
 ```
+
+![](./images/Kernel_simulator.gif)
 The pseudo_program files are created by the subproject of this repository [ProgramsGenerator](../ProgramsGenerator)
 ___
 
