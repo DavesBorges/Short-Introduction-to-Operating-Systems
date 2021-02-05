@@ -173,11 +173,10 @@ void print_choosed_frame_s(const Conversion_table& ftbl, int frame, int pageId)
 void set_activation_bits(vector<Page>& virtual_memory) {
 	
 	auto pages_in_memory = get_pages_in_memory(virtual_memory);
+
 	if (pages_in_memory.empty()) {
 		return;
 	}
-
-
 	std::cout << "Select pages to set Activation bit to 1" << '\n';
 	std::cout << "Enter a list of pages and then press Enter " << '\n';
 
@@ -191,6 +190,7 @@ void set_activation_bits(vector<Page>& virtual_memory) {
 	int input;
 	while (!stream.eof()) {
 		stream >> input;
+		
 		auto& vm = virtual_memory;
 
 		Page tempPage;
@@ -242,7 +242,7 @@ void access_page_disk(vector<Page>& virtual_memory, int time)
 		if (it == vm.end()) {
 			std::cout << "Invalid page " << '\n';
 		}
-		else if (it->frame_index < 0 {
+		else if (it->frame_index < 0) {
 			std::cout << "page " << input << " is not in memory" << '\n';
 		}
 		else {
