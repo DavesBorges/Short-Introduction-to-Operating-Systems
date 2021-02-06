@@ -25,13 +25,16 @@ On the top level directory run the following bash/cmd commands:
   cmake ..
 ```
 
-* Open the correspond project file for your plattaform (Short-Introduction-to-Operating-Systems.sln) in case of Windows
+* Open the corresponding project file for your plattaform (Short-Introduction-to-Operating-Systems.sln) in case of Windows
 * Set the Kernel-Simulator as the Startup Project or Project to run if not set already
 
 
 ## Usage
-There will be a README file per subproject(chapter) with instructions on how to use
+There will be a README file per project with instructions on how to use
+
+## Projects
 
 * [Programs Generator](./ProgramsGenerator)
 * [Kernel-Simulator (Chapter 4)](./Chapter-4-Processes-and-Thread)
+* [Page-Replacement-Algorithms (Chapter 5)](./Chapter-5-Memory-and-Storage/Page-Replacement-Algorithms)
 
