@@ -17,7 +17,7 @@
 #include <sstream>
 #include <algorithm>
 #include "Runtime.h"
-#include "../Command/Command.h"
+#include "Command/Command.h"
 
 
 

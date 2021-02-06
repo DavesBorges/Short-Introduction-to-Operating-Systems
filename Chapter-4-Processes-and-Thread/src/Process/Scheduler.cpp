@@ -187,15 +187,20 @@ namespace Scheduler {
             control_block.pid = ++start_pid;
             control_block.name = argv[i];
 
-            //get the index of the first character after the last '/' occurence
-            // "~/someDirectory/program" becomes just "program"
-            int j = control_block.name.size();
-            while (j >= 0) {
-                if (control_block.name[j] == '/') {
-                    j++;
-                    break;
+            auto pos = control_block.name.find('/');
+            int j = 0;
+            if (pos != string::npos) {
+
+                //get the index of the first character after the last '/' occurence
+                // "~/someDirectory/program" becomes just "program"
+                int j = control_block.name.size();
+                while (j >= 0) {
+                    if (control_block.name[j] == '/') {
+                        j++;
+                        break;
+                    }
+                    --j;
                 }
-                --j;
             }
 
             //Construct and push to the running_process. First in First Served
