@@ -1,8 +1,8 @@
 # Short-Intorudction-to-Operating-Systems
 A repository with projects from the book Short Introduction to Operating Systems by Mark Burgess
 
-![Kernel-Simulator (Chapter 4)](./Chapter-4-Processes-and-Thread/images/Kernel_simulator.gif)
-##### [Kernel-Simulator (Chapter 4)](./Chapter-4-Processes-and-Thread)
+![Kernel-Simulator (Chapter 4)](./Chapter-4-Processes-and-Thread/Kernel-Simulator/images/Kernel_simulator.gif)
+##### [Kernel-Simulator (Chapter 4)](./Chapter-4-Processes-and-Thread/Kernel-Simulator)
 
 ## Where to get this book
 The book is free and you have two options available on getting it:
@@ -34,7 +34,7 @@ There will be a README file per project with instructions on how to use
 
 ## Projects
 
-* [Programs Generator](./ProgramsGenerator)
-* [Kernel-Simulator (Chapter 4)](./Chapter-4-Processes-and-Thread)
+* [Programs Generator](./Chapter-4-Processes-and-Thread/ProgramsGenerator)
+* [Kernel-Simulator (Chapter 4)](./Chapter-4-Processes-and-Thread/Kernel-Simulator)
 * [Page-Replacement-Algorithms (Chapter 5)](./Chapter-5-Memory-and-Storage/Page-Replacement-Algorithms)
 
