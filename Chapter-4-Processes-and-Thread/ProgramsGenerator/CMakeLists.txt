@@ -9,5 +9,5 @@ set_target_properties( ProgramsGenerator	PROPERTIES
 						)
 
 target_include_directories(ProgramsGenerator PUBLIC 
-							../Chapter-4-Processes-And-Thread/src)
+							../Kernel-Simulator/src)
 
