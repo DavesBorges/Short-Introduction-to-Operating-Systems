@@ -33,6 +33,10 @@
 
 #CMake Build folder
 build
+
+#IDES
+.idea
+
 #CMake
 
 CMakeLists.txt.user
