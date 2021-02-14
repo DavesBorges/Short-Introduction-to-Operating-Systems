@@ -8,6 +8,7 @@
 
 
 #include <iostream>
+#include <algorithm>
 #include "Algorithms.h"
 #include "Cmdline_facilities.h"
 
@@ -25,7 +26,7 @@ void run_least_reused(Conversion_table&, vector<Page>&);
 int time = 0;
 
 
-int main() 
+int main()
 {
 	// These exists through the lifetime of our program and passed as arguments
 	// funciton calls
@@ -49,14 +50,14 @@ int main()
 		std::cerr << "Invalid input " << "Aborting " << '\n';
 		return -1;
 	}
-	
+
 }
 
 
-void run_fifo(Conversion_table& ctbl, vector<Page>& virtual_memory) { 
-	// Print the state of frame, pages, get the choice from the user perform 
+void run_fifo(Conversion_table& ctbl, vector<Page>& virtual_memory) {
+	// Print the state of frame, pages, get the choice from the user perform
 	//the page replacement using FIFO and then update the frames and pages
-	
+
 	std::cout << "You choosed FIFO (First In First Out) " << '\n';
 	while (true) {
 		std::cout << "\n\nThe frame table is currently :" << '\n';
@@ -71,7 +72,7 @@ void run_fifo(Conversion_table& ctbl, vector<Page>& virtual_memory) {
 		mark_selected_frame(ctbl, frame, choice);
 
 		//Locate the page selected by the user in virtual memory
-		Page temp;				
+		Page temp;
 		temp.pageId = choice;
 		auto it = find(virtual_memory.begin(), virtual_memory.end(), temp);
 
@@ -99,17 +100,17 @@ void run_second_chance(Conversion_table& ctbl, vector<Page>& virtual_memory) {
 	while (true) {
 		std::cout << "\n\nThe frame table is currently :" << '\n';
 		print_frametbl_second(ctbl);
-		
-		
+
+
 		if (!get_pages_in_memory(virtual_memory).empty()) {
 
 			set_activation_bits(virtual_memory);
 			print_frametbl_second(ctbl);
 		}
-		
+
 		print_pages_disk(virtual_memory);
 
-		
+
 		int choice = get_page_fault(virtual_memory);
 
 		int frame = second_chance(ctbl);
@@ -147,14 +148,14 @@ void run_least_reused(Conversion_table& ctbl, vector<Page>& virtual_memory) {
 
 
 		access_page_disk(virtual_memory, time);
-		
+
 		std::cout << "Select page to generate page fault\n";
 		print_pages_disk(virtual_memory);
 		int choice = get_page_fault(virtual_memory);
 
 		int frame = least_recently(ctbl);
 
-		
+
 		std::cout << "\n\nThe algorithm choosed this frame: \n";
 		print_frametbl(ctbl);
 		mark_selected_frame(ctbl, frame, choice);
@@ -180,7 +181,7 @@ void run_least_reused(Conversion_table& ctbl, vector<Page>& virtual_memory) {
 	}
 }
 
-vector<Page> create_virtual_memory(int size) 
+vector<Page> create_virtual_memory(int size)
 {
 	vector<Page> virtual_memory;
 
@@ -188,10 +189,10 @@ vector<Page> create_virtual_memory(int size)
 		Page page;
 		page.pageId = i;
 		page.frame_index = -1;
-		
+
 		virtual_memory.push_back(page);
 	}
-	
+
 	return virtual_memory;
 }
 
